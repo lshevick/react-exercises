@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const FormComponent = ({ addBlog }) => {
+ const FormComponent = ({ addBlog }) => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
 
@@ -28,3 +28,5 @@ export const FormComponent = ({ addBlog }) => {
         </form>
     );
 }
+
+export default FormComponent;

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-import { BlogCMS } from './App_components/BlogCMS';
-import { BookmarkingApp } from './App_components/BookmarkingApp';
-import { BlogReadingApp } from './App_components/BlogReadingApp';
-import { ContactList } from './App_components/ContactList';
-import { BlogForm } from './App_components/BlogForm';
+import BlogCMS from './components/BlogCMS';
+import BookmarkingApp from './components/BookmarkingApp';
+import BlogReadingApp from './components/BlogReadingApp';
+import ContactList  from './components/ContactList';
+import BlogForm from './components/BlogForm';
 
 import './App.css';
 

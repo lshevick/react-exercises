@@ -1,6 +1,6 @@
 import React from "react";
 
-export function BlogCMS({ }) {
+const BlogCMS = () => {
     
     return (<div className="blog-cms">
 
@@ -27,3 +27,5 @@ export function BlogCMS({ }) {
     </div>
     );
 }
+
+export default BlogCMS;

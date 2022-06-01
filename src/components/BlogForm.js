@@ -1,4 +1,4 @@
-import { FormComponent } from './BlogForm_components/FormComponent';
+import FormComponent from './BlogForm/FormComponent';
 import { useState, useEffect } from "react";
 
 const DATA = [
@@ -6,7 +6,7 @@ const DATA = [
     { title: 'Blog Two', body: 'Lorem ipsum dolor sit amet.' },
 ]
 
-export function BlogForm() {
+const BlogForm = () => {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
@@ -32,3 +32,5 @@ export function BlogForm() {
     </div>
     );
 }
+
+export default BlogForm;

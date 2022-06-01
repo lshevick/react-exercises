@@ -1,28 +1,26 @@
-import React from "react";
+import BookmarkForm from './BookmarkingApp/BookmarkForm';
+import { useState } from "react";
 
-export function BookmarkingApp({ }) {
+const BookmarkingApp = () => {
 
     return (<div className="bookmarking-app">
 
-        <form className='url-form'>
+        <BookmarkForm />
 
-            <label htmlFor="url">Enter URL</label>
-            <input id='url' type="text" />
-
-            <label htmlFor="title">Enter a Title</label>
-            <input id='title' type="text" />
-
-            <label htmlFor="tag">Enter a Tag</label>
-            <input id='tag' type="text" />
-
-        </form>
+        <div className="tags">
+            <p>Filter by Language</p>
+            <button type="button">HTML</button>
+            <button type="button">CSS</button>
+            <button type="button">JS</button>
+            <button type="button">ALL</button>
+        </div>
 
         <ul className="bookmarks">
 
             <li>
                 <div>
                     <h2>bookmark title</h2>
-                    <p>example url</p>
+                    <p>http://example url</p>
                     <p>tags</p>
                 </div>
             </li>
@@ -30,7 +28,7 @@ export function BookmarkingApp({ }) {
             <li>
                 <div>
                     <h2>bookmark title</h2>
-                    <p>example url</p>
+                    <p>http://example url</p>
                     <p>tags</p>
                 </div>
             </li>
@@ -38,7 +36,7 @@ export function BookmarkingApp({ }) {
             <li>
                 <div>
                     <h2>bookmark title</h2>
-                    <p>example url</p>
+                    <p>http://example url</p>
                     <p>tags</p>
                 </div>
             </li>
@@ -48,3 +46,5 @@ export function BookmarkingApp({ }) {
     </div>
     );
 }
+
+export default BookmarkingApp;
