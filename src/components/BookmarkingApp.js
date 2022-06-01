@@ -1,47 +1,37 @@
+import Tags from './BookmarkingApp/Tags';
+import BookmarkList from './BookmarkingApp/BookmarkList';
 import BookmarkForm from './BookmarkingApp/BookmarkForm';
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+const DATA = [
+    { id: 1, title: 'title html', url: 'https://url.com', tag: 'html' },
+    { id: 2, title: 'title css', url: 'https://url.com', tag: 'css' },
+    { id: 3, title: 'title js', url: 'https://url.com', tag: 'js' },
+]
+
+const INITIAL_STATE = [];
 
 const BookmarkingApp = () => {
+    const [bookmarks, setBookmarks] = useState(INITIAL_STATE);
+    const [uid, setUid] = useState(0);
+
+    useEffect(() => {
+        setBookmarks(DATA);
+    }, []);
+
+    const addBookmark = (newBookmark) => {
+        newBookmark.id = uid;
+        setBookmarks([...bookmarks, newBookmark]);
+        setUid(uid + 1);
+    }
 
     return (<div className="bookmarking-app">
 
-        <BookmarkForm />
+        <BookmarkForm addBookmark={addBookmark} />
 
-        <div className="tags">
-            <p>Filter by Language</p>
-            <button type="button">HTML</button>
-            <button type="button">CSS</button>
-            <button type="button">JS</button>
-            <button type="button">ALL</button>
-        </div>
+        <Tags />
 
-        <ul className="bookmarks">
-
-            <li>
-                <div>
-                    <h2>bookmark title</h2>
-                    <p>http://example url</p>
-                    <p>tags</p>
-                </div>
-            </li>
-
-            <li>
-                <div>
-                    <h2>bookmark title</h2>
-                    <p>http://example url</p>
-                    <p>tags</p>
-                </div>
-            </li>
-
-            <li>
-                <div>
-                    <h2>bookmark title</h2>
-                    <p>http://example url</p>
-                    <p>tags</p>
-                </div>
-            </li>
-
-        </ul>
+        <BookmarkList bookmarks={bookmarks} />
 
     </div>
     );

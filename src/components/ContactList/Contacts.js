@@ -1,5 +1,5 @@
 
- const Contacts = ({ uid, contacts }) => {
+const Contacts = ({ uid, contacts }) => {
 
     const contactList = contacts.map((contact) => (
 
@@ -15,11 +15,12 @@
         </li>
     ));
 
-    return (<ul className='contacts'>
+    return (
+        <ul className='contacts'>
 
-        {contactList}
+            {contactList}
 
-    </ul>
+        </ul>
     );
 }
 
