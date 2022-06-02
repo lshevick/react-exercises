@@ -27,7 +27,7 @@ const PostDetail = ({ id, title, body, ...props }) => {
             <div className="editing">
                 <input type="text" name="{title}" id="{title}" value={newTitle} onChange={e => setNewTitle(e.target.value)} />
                 <input type="text" name="{body}" id="{body}" value={newBody} onChange={e => setNewBody(e.target.value)} />
-                <button type='button' onClick={() => saveBlog(id, title, body)}>Save</button>
+                <button id='save-btn' type='button' onClick={() => saveBlog(id, title, body)}>Save</button>
                 <button type='button' onClick={() => setIsEditing(false)}>Cancel</button>
             </div>
         </li>
