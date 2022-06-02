@@ -1,13 +1,26 @@
 
+const Tags = ({ bookmarks }) => {
 
-const Tags = () => {
-  return <div className="tags">
+    const handleClick = (e) => {
+
+    }
+
+    const buttons = bookmarks.map((bookmark) => (
+        <button 
+        key={bookmark.id} 
+        type='button'
+
+        >
+            {bookmark.tag}
+            </button>
+    ))
+
+    return (
+        <div className="tags">
             <p>Filter by Language</p>
-            <button type="button">HTML</button>
-            <button type="button">CSS</button>
-            <button type="button">JS</button>
-            <button type="button">ALL</button>
-        </div>;
+            {buttons}
+        </div>
+    );
 }
-  
+
 export default Tags;

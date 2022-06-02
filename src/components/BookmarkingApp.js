@@ -9,6 +9,7 @@ const DATA = [
     { id: 3, title: 'title js', url: 'https://url.com', tag: 'js' },
 ]
 
+
 const INITIAL_STATE = [];
 
 const BookmarkingApp = () => {
@@ -25,11 +26,11 @@ const BookmarkingApp = () => {
         setUid(uid + 1);
     }
 
+
+
     return (<div className="bookmarking-app">
 
         <BookmarkForm addBookmark={addBookmark} />
-
-        <Tags />
 
         <BookmarkList bookmarks={bookmarks} />
 
