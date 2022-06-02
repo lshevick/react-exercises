@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import Contacts from './ContactList/Contacts';
 import ContactForm  from './ContactList/ContactForm';
 
+import './ContactList/ContactList.css';
+
 const DATA = [
     { id: 1, firstName: 'John', lastName: 'Doe', address: '123 Main St', phoneNum: '(999)999-9999' },
     { id: 2, firstName: 'Mike', lastName: 'Jones', address: '789 E Main St', phoneNum: '(281)303-8004' },

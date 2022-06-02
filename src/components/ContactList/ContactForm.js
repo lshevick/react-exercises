@@ -32,16 +32,16 @@ const ContactForm = ({ addContact }) => {
         <form onSubmit={handleSubmit} className='contact-form'>
 
             <label htmlFor="first-name"></label>
-            <input id='first-name' name='firstName' type="text" autoComplete="off" value={state.firstName} onChange={handleChange} />
+            <input id='first-name' name='firstName' type="text" autoComplete="off" value={state.firstName} onChange={handleChange} placeholder='Frist Name'/>
 
             <label htmlFor="last-name"></label>
-            <input id='last-name' name='lastName' type="text" autoComplete="off" value={state.lastName} onChange={handleChange} />
+            <input id='last-name' name='lastName' type="text" autoComplete="off" value={state.lastName} onChange={handleChange} placeholder='Last Name'/>
 
             <label htmlFor="address"></label>
-            <input id='address' name='address' type="text" autoComplete="off" value={state.address} onChange={handleChange} />
+            <input id='address' name='address' type="text" autoComplete="off" value={state.address} onChange={handleChange} placeholder='Address'/>
 
             <label htmlFor="phone-num"></label>
-            <input id='phone-num' name='phoneNum' type="text" autoComplete="off" value={state.phoneNum} onChange={handleChange} />
+            <input id='phone-num' name='phoneNum' type="text" autoComplete="off" value={state.phoneNum} onChange={handleChange} placeholder='Phone Number'/>
 
             <button type='submit'>Add Contact</button>
         </form>
