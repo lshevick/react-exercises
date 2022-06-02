@@ -2,6 +2,8 @@ import PostDetail from './BlogCMS/PostDetail';
 import Form from './BlogCMS/Form';
 import { useEffect, useState } from "react";
 
+import './BlogCMS/BlogCMS.css';
+
 const DATA = [
     { id: 1, title: 'Blog One', body: 'Lorem ipsum dolor sit amet.' },
     { id: 2, title: 'Blog Two', body: 'Lorem ipsum dolor sit amet.' },

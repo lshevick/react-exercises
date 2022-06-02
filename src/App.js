@@ -14,12 +14,12 @@ function App(props) {
   return (
     <div className="react-exercises">
 
-      <nav>
-        <li><button onClick={() => setSelection('BlogForm')} >Blog Form</button></li> 
-        <li><button onClick={() => setSelection('ContactList')} >Contact List</button></li>
-        <li><button onClick={() => setSelection('BlogReadingApp')} >Blog Reading App</button></li>
-        <li><button onClick={() => setSelection('BookmarkingApp')} >Bookmarking App</button></li>
-        <li><button onClick={() => setSelection('BlogCMS')} >Blog CMS</button></li>
+      <nav className='navigation'>
+        <li className='nav-item'><button onClick={() => setSelection('BlogForm')} >Blog Form</button></li> 
+        <li className='nav-item'><button onClick={() => setSelection('ContactList')} >Contact List</button></li>
+        <li className='nav-item'><button onClick={() => setSelection('BlogReadingApp')} >Blog Reading App</button></li>
+        <li className='nav-item'><button onClick={() => setSelection('BookmarkingApp')} >Bookmarking App</button></li>
+        <li className='nav-item'><button onClick={() => setSelection('BlogCMS')} >Blog CMS</button></li>
       </nav>
 
       {selection === 'BlogForm' && <BlogForm />}

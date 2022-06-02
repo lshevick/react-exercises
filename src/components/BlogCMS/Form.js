@@ -20,10 +20,10 @@ const Form = ({ addBlog }) => {
     return (
         <form onSubmit={handleSubmit} className="cms-blog-form">
             <label htmlFor="blog-title"></label>
-            <input id="blog-title" type="text" name='title' value={title} onChange={handleTitleChange} />
+            <input id="blog-title" type="text" name='title' value={title} onChange={handleTitleChange} autoComplete='off' placeholder='Title of post' />
 
             <label htmlFor="blog-body"></label>
-            <input id="blog-body" type="text" name='body' value={body} onChange={handleBodyChange} />
+            <input id="blog-body" type="text" name='body' value={body} onChange={handleBodyChange} autoComplete='off' placeholder='Body of post' />
 
             <button type='submit'>Submit</button>
         </form>
