@@ -1,0 +1,23 @@
+.blog-form {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+}
+
+.blog-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+}
+
+.blog-form input {
+    margin: 0.5rem;
+}
+
+.blog-form button {
+    margin: 1rem;
+    width: 50%;
+}
