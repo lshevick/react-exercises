@@ -8,6 +8,7 @@ const INITIAL_STATE = {
 
 const BookmarkForm = ({ addBookmark }) => {
     const [state, setState] = useState(INITIAL_STATE);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (state.url.trim().length === 0) {
@@ -33,7 +34,7 @@ const BookmarkForm = ({ addBookmark }) => {
         <input id='title' type="text" name='title' value={state.title} onChange={handleChange} autoComplete='off'/>
 
         <label htmlFor="tag">Enter a Tag</label>
-        <input id='tag' type="text" name='tag' value={state.tag} onChange={handleChange} autoComplete='off'/>
+        <input id='tag' type="text" name='tag' value={state.tag.toLowerCase()} onChange={handleChange} autoComplete='off'/>
 
         <button type="submit">Add Bookmark</button>
     </form>;

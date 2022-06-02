@@ -14,7 +14,7 @@ const INITIAL_STATE = [];
 
 const BookmarkingApp = () => {
     const [bookmarks, setBookmarks] = useState(INITIAL_STATE);
-    const [uid, setUid] = useState(0);
+    const [uid, setUid] = useState(4);
 
     useEffect(() => {
         setBookmarks(DATA);
