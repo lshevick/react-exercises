@@ -1,7 +1,8 @@
-import Tags from './BookmarkingApp/Tags';
 import BookmarkList from './BookmarkingApp/BookmarkList';
 import BookmarkForm from './BookmarkingApp/BookmarkForm';
 import { useState, useEffect } from "react";
+
+import './BookmarkingApp/BookmarkingApp.css';
 
 const DATA = [
     { id: 1, title: 'title html', url: 'https://url.com', tag: 'html' },
@@ -28,13 +29,16 @@ const BookmarkingApp = () => {
 
 
 
-    return (<div className="bookmarking-app">
+    return (
+        <div className="bookmarking-app">
 
-        <BookmarkForm addBookmark={addBookmark} />
+            <BookmarkForm addBookmark={addBookmark} />
+            
+            <div className="bookmark-wrapper">
+            <BookmarkList bookmarks={bookmarks} />
+            </div>
 
-        <BookmarkList bookmarks={bookmarks} />
-
-    </div>
+        </div>
     );
 }
 

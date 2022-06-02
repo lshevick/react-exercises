@@ -37,7 +37,7 @@ const BookmarkList = ({ bookmarks }) => {
             <div>
                 <h2>{bookmark.title}</h2>
                 <p>{bookmark.url}</p>
-                <p>{bookmark.tag}</p>
+                <p><span className="tag">{bookmark.tag}</span></p>
             </div>
         </li>
     ));

@@ -25,19 +25,21 @@ const BookmarkForm = ({ addBookmark }) => {
         });
     }
 
-    return <form onSubmit={handleSubmit} className='url-form'>
+    return (
+        <form onSubmit={handleSubmit} className='url-form'>
 
-        <label htmlFor="url">Enter URL</label>
-        <input id='url' type="text" name='url' value={state.url} onChange={handleChange} autoComplete='off'/>
+            <label htmlFor="url">Enter URL</label>
+            <input id='url' type="text" name='url' value={state.url} onChange={handleChange} autoComplete='off' />
 
-        <label htmlFor="title">Enter a Title</label>
-        <input id='title' type="text" name='title' value={state.title} onChange={handleChange} autoComplete='off'/>
+            <label htmlFor="title">Enter a Title</label>
+            <input id='title' type="text" name='title' value={state.title} onChange={handleChange} autoComplete='off' />
 
-        <label htmlFor="tag">Enter a Tag</label>
-        <input id='tag' type="text" name='tag' value={state.tag.toLowerCase()} onChange={handleChange} autoComplete='off'/>
+            <label htmlFor="tag">Enter a Tag</label>
+            <input id='tag' type="text" name='tag' value={state.tag.toLowerCase()} onChange={handleChange} autoComplete='off' />
 
-        <button type="submit">Add Bookmark</button>
-    </form>;
+            <button type="submit">Add Bookmark</button>
+        </form>
+    );
 }
 
 export default BookmarkForm

@@ -1,0 +1,99 @@
+.bookmarking-app {
+    height: 100vh;
+    background-color: #fff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.url-form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: center;
+    border-right: 1px solid black;
+}
+
+.url-form input {
+    padding: 0.2rem;
+    margin: 0.5rem;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.url-form button {
+    margin: 1rem;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    border: 1px solid black;
+    background-color: darkgreen;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0px 2px 1px #555;
+}
+
+.url-form button:hover {
+    background-color: rgb(0, 83, 0);
+    cursor: pointer;
+}
+
+.url-form button:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+.bookmark-wrapper {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-buttons {
+    text-align: center;
+}
+
+.filter-buttons button {
+    font-size: 1.1rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 0 1rem;
+    padding: 0.5rem;
+    border: none;
+    background-color: #aaa;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 2px 1px #777;
+}
+
+.filter-buttons button:hover {
+    background-color: #999;
+}
+
+.filter-buttons button:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+.bookmarks {
+    list-style: none;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.bookmarks li {
+    background-color: #eee;
+    padding: 0.8rem;
+    margin: 1rem;
+    border-radius: 5px;
+}
+
+.tag {
+    text-transform: uppercase;
+    padding: 0.1rem;
+    font-style: italic;
+    background-color: orangered;
+}
