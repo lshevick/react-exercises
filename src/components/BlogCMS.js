@@ -1,30 +1,67 @@
-import React from "react";
+import PostDetail from './BlogCMS/PostDetail';
+import Form from './BlogCMS/Form';
+import { useEffect, useState } from "react";
+
+const DATA = [
+    { id: 1, title: 'Blog One', body: 'Lorem ipsum dolor sit amet.' },
+    { id: 2, title: 'Blog Two', body: 'Lorem ipsum dolor sit amet.' },
+    { id: 3, title: 'Blog Three', body: 'Lorem ipsum dolor sit amet.' },
+]
+
+const INITIAL_STATE = [];
 
 const BlogCMS = () => {
-    
-    return (<div className="blog-cms">
+    const [blogs, setBlogs] = useState(INITIAL_STATE);
+    const [uid, setUid] = useState(4);
 
-        <form className="cms-blog-form">
-            <label htmlFor="blog-title"></label>
-            <input id="blog-title" type="text" />
+    useEffect(() => {
+        setBlogs(DATA);
+    }, [])
 
-            <label htmlFor="blog-body"></label>
-            <input id="blog-body" type="text" />
+    const addBlog = (title, body) => {
+        const newBlog = {
+            id: uid,
+            title,
+            body,
+        }
+        setBlogs([newBlog, ...blogs]);
+        setUid(uid + 1);
+    }
 
-            <button type='submit'>Submit</button>
-        </form>
+    const editBlog = (id, title, body) => {
+        const updatedBlogs = [...blogs];
+        const index = updatedBlogs.findIndex(blog => blog.id === id);
+        updatedBlogs[index].title = title;
+        updatedBlogs[index].body = body;
+        setBlogs(updatedBlogs);
 
-        <ul>
-            <li>
-                <div>
-                    <h2>Blog Post for CMS</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae ducimus deleniti adipisci atque molestiae voluptatibus cupiditate illum dicta, corporis odio repudiandae, reprehenderit autem maxime accusamus! Impedit, illum? Voluptatum, obcaecati unde?</p>
-                </div>
-                <button type="button">Edit</button>
-            </li>
-        </ul>
+    }
 
-    </div>
+    const removeBlog = (id) => {
+        const updatedBlogs = [...blogs];
+        const index = updatedBlogs.findIndex(blog => blog.id === id);
+        updatedBlogs.splice(index, 1);
+        setBlogs(updatedBlogs);
+    }
+
+
+
+    const postList = blogs.map(blog => <PostDetail
+        key={blog.id} {...blog}
+        editBlog={editBlog}
+        removeBlog={removeBlog}
+    />)
+
+    return (
+        <div className="blog-cms">
+
+            <Form addBlog={addBlog} />
+
+            <ul>
+                {postList}
+            </ul>
+
+        </div>
     );
 }
 

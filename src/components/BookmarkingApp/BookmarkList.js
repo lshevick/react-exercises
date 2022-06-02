@@ -13,14 +13,12 @@ const BookmarkList = ({ bookmarks }) => {
 
     const handleFilterClick = (e) => {
         const currentFilter = e.target.value;
-        console.log(currentFilter);
         return setFilter(currentFilter);
 
     }
     
     //makes Set of unique buttons from provided tags
     const filterButtons = [...new Set(buttons)].map((button, i) => {
-        console.log(button);
         return (<button
             key={i}
             type='button'
@@ -32,15 +30,9 @@ const BookmarkList = ({ bookmarks }) => {
     })
     
     // need to use buttons when clicked to filter out the bookmarks that dont have the same tag
-    const bookmarkList = bookmarks.filter((bookmark) => {
-        if (filter === 'All') {
-            return bookmarks;
-        }
-        if (filter === bookmark.tag) {
-            const filteredBookmark = bookmark;
-            return filteredBookmark;
-        }
-    }).map((bookmark) => (
+    const bookmarkList = bookmarks
+        .filter((bookmark) => filter === 'All' ? bookmark : bookmark.tag === filter)
+        .map((bookmark) => (
         <li key={bookmark.id}>
             <div>
                 <h2>{bookmark.title}</h2>
